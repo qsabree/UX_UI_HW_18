@@ -1,0 +1,128 @@
+/* UX_UI_HW_18 */
+
+li {
+  display: inline; 
+  font-size: 110%;
+}
+
+body {
+  background-color: pink;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+p {
+  text-align: left;
+}
+
+
+.inline-block {
+  text-align: center;
+}
+
+.centeredButton {
+ display: block;
+ margin: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+  
+
+footer {
+  text-align: center;
+  margin-bottom: auto;
+  font-size: large;
+}
+
+/* CSS Flex */
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  /*width: 100%;
+  margin: auto */
+} 
+
+
+.contentBlock {
+ /* padding: 5%; 
+  display: block;
+ margin: auto; */
+}
+
+.contentColumn {
+  width: 33%; 
+} 
+
+/* CSS Grid */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'left right center'
+    'head1 head2 head3'
+    'content1 content2 content3';
+  gap: 10px;
+  background-color: pink;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 { grid-area: left; }
+.item2 { grid-area: center; }
+.item3 { grid-area: right; }
+.item4 { grid-area: content1; }
+.item5 { grid-area: content2; }
+.item6 { grid-area: content3; }
+.item7 { grid-area: head1; }
+.item8 { grid-area: head2; }
+.item9 { grid-area: head3; }
+
+
+/* 600 px was not enough to see a change in devices. However, 1000px worked fine. */
+@media only screen and (max-width: 1000px) {
+  .flexContainer {
+  display: flex;
+  flex-direction: column;
+} 
+.contentColumn {
+  width: 100%; 
+} 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'left' 
+    'head1'
+    'content1'
+    'center' 
+    'head2'
+    'content2' 
+    'right' 
+    'head3'
+    'content3';
+}
+}
